@@ -1,5 +1,8 @@
 package com.bridgelabz.CardsProgram;
 
+import java.util.Comparator;
+import java.util.LinkedList;
+
 public class ImplementationOfCard implements DeckOfCardsInterface {
 
     private String[] decks = new String[52];
@@ -50,14 +53,30 @@ public class ImplementationOfCard implements DeckOfCardsInterface {
 
     public void printDistributedCards() {
         for (int i = 0; i < 4; i++) {
+            LinkedList myList = new LinkedList();
             int playerCounter = i + 1;
             System.out.println("The Player " + playerCounter + " has following Nine Card :");
             for (int j = 0; j < 9; j++) {
+                myList.add(playersCards[i][j]);
                 System.out.print("[ " + playersCards[i][j] + " ]");
             }
-            System.out.println("\n");
+            myList.sort(Comparator.reverseOrder());
+            System.out.println("\nCards of Player " + playerCounter + " after arranging in Rank Order :");
+            System.out.println(myList + "\n");
         }
     }
+
+    public void playerSortCard() {
+        LinkedList list = new LinkedList();
+        for (int i = 0; i < decks.length; i++) {
+            list.add(decks[i]);
+        }
+        list.sort(Comparator.reverseOrder());
+        System.out.println("One Player has arranged all the cards in Rank Order.");
+        System.out.println(list);
+    }
+
+
 }
 
 

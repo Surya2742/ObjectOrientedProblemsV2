@@ -3,6 +3,7 @@ package com.bridgelabz.CardsProgram;
 public class MainCard {
     public static void main(String[] args) {
         DeckOfCardsInterface deckOfCard = new ImplementationOfCard();
+        DeckOfCardsInterface Player = new ImplementationOfCard();
         System.out.println("---------------Before Shuffle-----------");
         deckOfCard.print();
         deckOfCard.shuffle();
@@ -10,5 +11,6 @@ public class MainCard {
         deckOfCard.print();
         deckOfCard.distribute();
         deckOfCard.printDistributedCards();
+        Player.playerSortCard();
     }
 }

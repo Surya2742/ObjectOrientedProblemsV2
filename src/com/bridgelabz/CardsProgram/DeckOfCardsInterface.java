@@ -15,4 +15,6 @@ public interface DeckOfCardsInterface {
 
     public void printDistributedCards();
 
+    public void playerSortCard();
+
 }
